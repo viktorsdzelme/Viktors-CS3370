@@ -33,8 +33,10 @@ make clean
   boundary, and isn't already free (catches double delete).
 - Pool construction allocates the raw block last, so a failure can't leak.
 
-## Changes to the provided harness
+## The provided test harness
 
-- Removed a stray `}` after the commented-out `main` snippet at the end of the
-  file (it caused `error: extraneous closing brace`).
-- Added `#include <functional>` for `std::not_equal_to`.
+`assignment2_test_harness.h` is used exactly as provided (unmodified). Its last
+line is a stray `}` that would not compile as a plain `#include`, so `main.cpp`
+includes it inside `namespace a2_harness { ... }` and that brace closes the
+namespace. `main.cpp` also includes `<functional>` first, since the harness uses
+`std::not_equal_to` without including it.

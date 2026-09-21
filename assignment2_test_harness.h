@@ -31,7 +31,6 @@
 #include <algorithm>
 #include <cstddef>
 #include <cstdint>
-#include <functional>   // std::not_equal_to (added: was only included transitively)
 #include <iostream>
 #include <new>
 #include <sstream>
@@ -560,3 +559,4 @@ static void test_profile() {
 
     return g_fail == 0 ? 0 : 1;
 */
+}

@@ -2,12 +2,30 @@
 // Author: Viktors Dzelme
 //
 // main.cpp -- runs the handout's driver program, then the self-test harness.
+// Everything the provided harness includes, plus <functional> (which it uses
+// for std::not_equal_to but doesn't include itself).
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+#include <functional>
 #include <iostream>
+#include <new>
+#include <sstream>
 #include <string>
 #include <vector>
 
 #include "NPC.h"
+
+// The provided harness is used unmodified. Its last line is a stray '}'
+// (after the commented-out main snippet), which would not compile on its own.
+// Including it inside a namespace lets that brace close the namespace. All of
+// the harness's own #includes are already satisfied above, so no standard
+// header ends up inside the namespace.
+namespace a2_harness {
 #include "assignment2_test_harness.h"
+// <-- the harness file's final '}' closes namespace a2_harness
+
+using namespace a2_harness;
 
 // The minimum driver from the handout (section D).
 static void run_driver() {
