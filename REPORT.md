@@ -2,7 +2,7 @@
 
 ## 1. Prediction (written before any timing)
 
-<!-- Which stage do you expect to be slowest, and why? Write this BEFORE timing anything. -->
+I expect the reading to be the slowest stage because it has to handle over a million samples in the files and then turnthe text in them into integers. This is more work than comparing or adding numbers. The detection stage is a single pass, with smoothing each step is a couple multiples and piggyback, area and printing only work on a couple pulses.
 
 ## 2. Baseline (commit tagged `baseline`)
 Data: <N> files x <M> samples, seed <S>. Build: -O2.
