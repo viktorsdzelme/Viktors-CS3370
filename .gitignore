@@ -1,0 +1,8 @@
+# compiled programs
+pulse
+pulse_debug
+gen_data
+
+# generated test data (recreate it from the seed in REPORT.md)
+bench/
+edge/
