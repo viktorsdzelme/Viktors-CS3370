@@ -30,8 +30,14 @@ Data readNegated(const fs::path& file) {
 Data smooth(const Data& y) {
     Data s{y};
 
-    for (std::size_t i = 3; i + 3 < y.size(); ++i)
-        s[i] = (y[i-3] + 2*y[i-2] + 3*y[i-1] + 3*y[i] + 3*y[i+1] + 2*y[i+2] + y[i+3]) / 15;
+    for (std::size_t i = 3; i + 3 < y.size(); ++i) {
+        const long long sum =
+            static_cast<long long>(y[i-3]) +
+            2LL*y[i-2] + 3LL*y[i-1] + 3LL*y[i] +
+            3LL*y[i+1] + 2LL*y[i+2] + y[i+3];
+
+        s[i] = static_cast<int>(sum / 15);
+    }
 
     return s;
 }
