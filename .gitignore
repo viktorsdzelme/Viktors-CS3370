@@ -6,3 +6,11 @@ gen_data
 # generated test data (recreate it from the seed in REPORT.md)
 bench/
 edge/
+
+baseline_bench.txt
+baseline_timing.txt
+sample_debug_output.txt
+sample_debug_timing.txt
+sample_output.txt
+sample_timing.txt
+pulse_debug.dSYM/
