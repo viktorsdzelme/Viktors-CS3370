@@ -21,6 +21,12 @@ Data readNegated(const fs::path& file) {
     std::ifstream in{file};
     Data d;
 
+    std::error_code ec;
+    const auto bytes = fs::file_size(file, ec);
+    if (!ec) {
+        d.reserve(bytes / 6);
+    }
+
     std::transform(std::istream_iterator<int>{in}, std::istream_iterator<int>{},
                    std::back_inserter(d), std::negate<>{});
 
